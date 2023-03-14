@@ -1,5 +1,7 @@
 import './Navbar.css'
 import logo from './assets/logo1.png'
+import CartWidget from '../CartWidget/CartWidget'
+
 
 const Navbar = () => {
     return (
@@ -8,7 +10,7 @@ const Navbar = () => {
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
                         <div>
-                            <a href="./index.html"><img  src={logo} class="logo1"/></a>
+                            <a href="./index.html"><img  src={logo} class="logo1" alt="logo"/></a>
                         </div>
                         <a href="../index.html" class="navbar-brand fs-1 fw-bold">MECATRON REPUESTOS</a>
                         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -20,6 +22,7 @@ const Navbar = () => {
                                 <button href="../index.html" class="nav-item nav-link">Contacto</button>
                                 <button href="../index.html" class="nav-item nav-link active">Compras</button>
                             </div>
+                                <CartWidget />
                         </div>
                     </div>
                 </nav>

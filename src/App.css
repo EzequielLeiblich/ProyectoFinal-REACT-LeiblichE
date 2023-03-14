@@ -23,6 +23,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.Sidebar {
+  top: 100px;
+  width: 270px;
+  position: fixed;
+  border: 2px solid rgba(192, 192, 192, 0.411);
+  border-radius: 15px;
+}
 
 .App-link {
   color: #61dafb;

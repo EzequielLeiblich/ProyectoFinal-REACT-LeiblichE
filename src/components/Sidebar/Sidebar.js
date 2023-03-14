@@ -1,5 +1,3 @@
-import './Sidebar.css'
-
 const Sidebar = () => {
     return (
             <nav className= "Sidebar col text-center">
@@ -22,7 +20,7 @@ const Sidebar = () => {
                         </select>
                         <li class="border-top my-3"></li>
                         <li className="nav-item" >
-                            <a id="botonCarrito" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary btn fs-5"><i class="fas fa-shopping-cart fa-1x"></i> Carrito de Compras</a>
+                            <button id="botonCarrito" class="btn btn-secondary btn fs-5"><i class="fas fa-shopping-cart fa-1x"></i> Carrito de Compras</button>
                         </li>
                         <li class="border-top my-3"></li>
                 </ul>
