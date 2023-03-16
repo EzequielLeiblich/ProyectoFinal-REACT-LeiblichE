@@ -1,3 +1,4 @@
+import './Counter.css'
 import {useState} from 'react'
 
 const Counter = () => {
