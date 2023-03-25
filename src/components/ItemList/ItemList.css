@@ -1,0 +1,8 @@
+.ListGroup {
+    display: flex;
+}
+
+.catalogo {
+    display:grid;
+    justify-content: center;
+}

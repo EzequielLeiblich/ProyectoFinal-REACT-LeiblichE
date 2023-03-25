@@ -1,16 +1,13 @@
-<<<<<<< Updated upstream
-const Item = ({ nombre, imagen, precio }) => {
-    return (
-        <div className="Item">
-            <img src={imagen} alt={nombre} style={{width: 100}}/>
-            <h3>{nombre}</h3>
-            <p>Precio: ${precio}</p>
-        </div>
-=======
-import './Item.css'
-import { Link } from 'react-router-dom'
+import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
 
-const Item = ({id, name, img, description, price }) => {
+const ItemDetail = ({ id, name, img, marca, category, description, price, stock }) => {
+    
+    const handleOnAdd = (quantity) => {
+        const productToAdd = {id, name, price, quantity}
+        console.log(productToAdd)
+    }
+
     return (
         <article className="CardItem">
             <header className="Header">
@@ -22,6 +19,12 @@ const Item = ({id, name, img, description, price }) => {
                 <img src={img} alt={name} className="ItemImg"/>
             </picture>
             <section>
+            <p className="Info">
+                    Marca: {marca}
+                </p>
+                <p className="Info">
+                    Categoria: {category}
+                </p>
                 <p className="Info">
                     Utilidad: {description}
                 </p>
@@ -30,11 +33,10 @@ const Item = ({id, name, img, description, price }) => {
                 </p>
             </section>           
             <footer className='ItemFooter'>
-                <Link to={`/item/${id}`} className='Option'>Ver detalle</Link>
-                </footer>
+                <ItemCount onAdd={handleOnAdd} stock={stock} />
+            </footer>
         </article>
->>>>>>> Stashed changes
     )
 }
 
-export default Item
+export default ItemDetail

@@ -2,16 +2,24 @@ import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Sidebar from './components/Sidebar/Sidebar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Counter from './components/Counter/Counter';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Sidebar />
-      <br/>
-      <ItemListContainer greeting={'Bienvenidos a mi E-commerce'}/>
-      <Counter />  
+      <BrowserRouter>
+        <Navbar />
+        <Sidebar />
+        <br/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting={'Todos nuestros productos'}/>}/>
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting={'Productos filtrados por categoria'}/>}/>
+          <Route path="/item/:itemId" element={<ItemDetailContainer />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

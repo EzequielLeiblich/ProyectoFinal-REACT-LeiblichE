@@ -72,3 +72,10 @@
     background-color: rgb(238, 140, 12);
     transition: 0.5s;
 }
+
+.navbar-nav {
+    background-color: #F0F4EF;
+    border-radius: 15px;
+    width: 400px;
+    position: right;
+}
