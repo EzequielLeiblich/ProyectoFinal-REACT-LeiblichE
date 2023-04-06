@@ -22,3 +22,22 @@
 .botonCarrito {
     font-size: medium;
 }
+
+.CartImg {
+    width: 35px;
+    margin-top: 0px;
+}
+
+.cant {
+    color: red;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.carrito {
+    margin-top: 20px;
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+}

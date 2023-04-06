@@ -15,6 +15,8 @@
     left: 0;
     margin: 0 auto;
     z-index: 1000;
+    border: 2px solid rgba(192, 192, 192, 0.411);
+    border-radius: 15px;
 }
 
 #check {
@@ -78,4 +80,60 @@
     border-radius: 15px;
     width: 400px;
     position: right;
+}
+
+.Categories {
+    font-size: 8px;
+}
+
+.Option {
+    text-decoration: none;
+    border-radius: 25;
+    margin: 0 50px;
+    width: auto;
+    padding: 5px;
+    font-size: 8px;
+    background: #616161;
+    border-radius: 8px;
+    flex: none;
+    display: flex;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    border: none;
+    border-style: none;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.ActiveOption {
+    text-decoration: none;
+    border-radius: 25;
+    margin: 0 50px;
+    width: auto;
+    padding: 5px;
+    font-size: 15px;
+    background: rgb(253, 2, 2);
+    border-radius: 8px;
+    flex: none;
+    display: flex;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    border: none;
+    border-style: none;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.NavLink {
+color :rgb(255, 0, 0)
 }

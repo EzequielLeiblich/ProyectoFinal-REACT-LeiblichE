@@ -6,7 +6,7 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
 
     const increment = () => {
         if(quantity < stock) {
-            setQuantity(quantity+1)
+            setQuantity(quantity + 1)
         }
     }
 

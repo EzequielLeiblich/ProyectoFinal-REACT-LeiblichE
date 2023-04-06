@@ -1,12 +1,18 @@
 import './CartWidget.css'
-
+import cart from './assets/cart.svg'
+import { useCart } from '../../context/CartContext';
 
 const CartWidget = () => {
 
+    const { totalQuantity } = useCart()
+
     return(
-        <div class="fas fa-shopping-cart fa-1x" id="botonCarrito">
-            {0}
-            <h2 class="btn btn-secondary btn fs-5">Carrito de Compras</h2>
+        <div to='/cart' className="CartWidget">
+            <p className='carrito'>Carrito de Compras</p>
+            <img src={cart} alt='cart-widget' className='CartImg'/>
+            <div className='cant'>
+            {totalQuantity}
+            </div>
         </div>
     );
 }
