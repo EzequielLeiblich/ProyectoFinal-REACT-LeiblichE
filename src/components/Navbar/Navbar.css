@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container-fluid {
+    background-color: #F0F4EF;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 1000;
+    border: 2px solid rgba(192, 192, 192, 0.411);
+    border-radius: 15px;
+}
+
+#check {
+    display: none;
+}
+
+.bar-btn {
+    display: none;
+}
+
+.nav {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    grid-area: nav;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+}
+
+.logo1 {
+    width: 60px;
+    height: 60px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.nav-menu {
+    display: flex;
+    margin-right: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+
+.nav-menu-item {
+    font-size: 22px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link {
+    padding: 8px;
+    border-radius: 3px;
+}
+
+.nav-menu-link:hover ,
+.nav-menu-link_active {
+    background-color: rgb(238, 140, 12);
+    transition: 0.5s;
+}
+
+.navbar-nav {
+    background-color: #F0F4EF;
+    border-radius: 15px;
+    width: 400px;
+    position: right;
+}
+
+.Categories {
+    font-size: 8px;
+}
+
+.Option {
+    text-decoration: none;
+    border-radius: 25;
+    margin: 0 50px;
+    width: auto;
+    padding: 5px;
+    font-size: 8px;
+    background: #616161;
+    border-radius: 8px;
+    flex: none;
+    display: flex;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    border: none;
+    border-style: none;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.ActiveOption {
+    text-decoration: none;
+    border-radius: 25;
+    margin: 0 50px;
+    width: auto;
+    padding: 5px;
+    font-size: 15px;
+    background: rgb(253, 2, 2);
+    border-radius: 8px;
+    flex: none;
+    display: flex;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    border: none;
+    border-style: none;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.NavLink {
+color :rgb(255, 0, 0)
+}

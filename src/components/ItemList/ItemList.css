@@ -1,0 +1,10 @@
+.ListGroup {
+    display: flex;
+}
+
+.catalogo {
+    margin-left: 200px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+}
