@@ -1,7 +1,9 @@
 import './ItemCount.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
+    const navigate = useNavigate()
     const [quantity, setQuantity] = useState(initial)
 
     const increment = () => {
@@ -25,6 +27,7 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
             </div>
             <div>
                 <button className="Button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
+                <button to='/cart' className="Button" onClick={() => navigate('/cart')}>Finalizar compra</button>
             </div>
         </div>
     )

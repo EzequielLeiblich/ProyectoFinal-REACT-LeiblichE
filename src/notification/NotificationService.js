@@ -29,11 +29,11 @@ export const NotificationProvider = ({ children }) => {
     })
 
     const setNotification = (type, text) => {
-        setNotificationData({ type, text })
-        setTimeout(() => {
-          setNotification({ type, text: ''})
-        }, 2000)
-      }
+      setNotificationData({ type, text })
+      setTimeout(() => {
+        setNotification({ type, text: ''})
+      }, 2000)
+    }
 
     return (
         <NotificationContext.Provider value={{ setNotification }}>

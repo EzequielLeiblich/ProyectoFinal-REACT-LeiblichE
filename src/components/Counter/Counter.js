@@ -1,4 +1,4 @@
-import './Counter.css'
+import './counter.css'
 import {useState} from 'react'
 
 const Counter = () => {
@@ -14,7 +14,7 @@ const Counter = () => {
     }
     return (
         <div className='Like'>
-            <h1>{count}</h1>
+            <h2>{count}</h2>
             <button className="btn btn-secondary btn fs-5" onClick={unlike}>Unlike</button>
             <button className="btn btn-secondary btn fs-5" onClick={like}>Like</button>
         </div>

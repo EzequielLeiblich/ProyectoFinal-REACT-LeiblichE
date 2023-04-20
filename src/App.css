@@ -24,7 +24,6 @@
   color: white;
 }
 
-
 .App-link {
   color: #61dafb;
 }
@@ -38,3 +37,6 @@
   }
 }
 
+.greeting {
+  margin-left: 280px;
+}

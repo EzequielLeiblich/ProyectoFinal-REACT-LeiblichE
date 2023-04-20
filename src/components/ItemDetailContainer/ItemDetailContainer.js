@@ -1,56 +1,36 @@
 import './ItemDetailContainer.css'
-import { useState, useEffect } from 'react'
-// import { getProductById } from '../../asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
-import { getDoc, doc } from 'firebase/firestore'
-import { db } from '../../services/firebase/firebaseConfig'
+import { getProductById } from '../../services/firebase/firestore/products'
+import { useAsync } from '../../hooks/useAsync'
 
-const ItemDetailContainer = () => {
-    const [loading, setLoading] = useState(true)
-    const [product, setProduct] = useState()
-
+const ItemDetailContainer = ({ greeting }) => {
     const { itemId } = useParams()
+    
+    const getProductWithId = () => getProductById(itemId)
 
-
-    useEffect(() => {
-        setLoading(true)
-
-        const productRef = doc(db, 'products', itemId)
-
-        getDoc(productRef)
-            .then(snapshot => {
-                console.log(snapshot)
-                const data = snapshot.data()
-                const productAdapted = { id: snapshot.id, ...data}
-                setProduct(productAdapted)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-
-        // getProductById(itemId).then(response => {
-        //     setProduct(response)
-        // })
-        // .catch(error => {
-        //     console.log(error)
-        // })
-        // .finally(() => {
-        //     setLoading(false)
-        // })
-    }, [itemId])
+    const { data: product, error, loading} = useAsync(getProductWithId, [itemId])
 
     if(loading) {
-        return <h1>Cargando...</h1>
+        return (
+            <div>
+                <h1>Cargando...</h1>
+            </div>
+        )
+    }
+
+    if(error) {
+        return (
+            <div>
+                <h1>Hubo un error</h1>
+            </div>
+        )
     }
 
     return(
         <div>
-            <h1>Detalles del producto:</h1>
+            <h1>{greeting}</h1>
             <div className='ItemDetailContainer' >
                 <ItemDetail  {...product} />
             </div>

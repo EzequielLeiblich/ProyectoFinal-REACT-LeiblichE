@@ -1,0 +1,66 @@
+.Checkout {
+    margin: 0 30px;
+    padding: 13px;
+    background: #0026ffe0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    border-style: none;
+    cursor: pointer;
+    font-size: large;
+}
+
+.Clear {
+    font-size: large;
+    background: #e20808c4;
+    border-radius: 12px;
+    margin: 0 30px;
+    padding: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.cants {
+    font-size: 30px;
+}
+
+.restar {
+    font-size: large;
+    background: #5e5e5ec4;
+    border-radius: 12px;
+    margin: 0 2px;
+    padding: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.sumar {
+    font-size: large;
+    background: #5e5e5ec4;
+    border-radius: 12px;
+    margin: 0 2px;
+    padding: 10px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.h1 {
+    margin-left: 400px;
+}
+
+.enCarrito {
+    width: auto;
+    padding: 30px;
+    margin: 0 auto;
+    font-size: 15px;
+    background-color: #F0F4EF;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    margin-left: 280px;
+    justify-content: center;
+}
+
+.prodEnCarrito {
+    display: flex;
+    padding: 8px;
+    background-color: #cecfce;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+}
