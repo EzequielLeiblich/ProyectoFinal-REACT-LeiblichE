@@ -24,8 +24,7 @@ const Sidebar = () => {
     return (
             <nav className= "Sidebar col text-center">
                 <ul className="list-unstyled ps-0">
-                    <li className="border-top my-3"></li>
-                    <div className="Categories">
+                    <div className="Categorias">
                         <h3>Categorias:</h3>
                         {
                             categories.map(cat => {

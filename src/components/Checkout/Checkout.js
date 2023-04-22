@@ -12,33 +12,33 @@ const Checkout = ({ greeting }) => {
     const [orderId, setOrderId] = useState('')
     const [loading, setLoading] = useState(false)
     const { cart, total, clearCart } = useCart()
-
     const { setNotification } = useNotification()
-
     const navigate = useNavigate()
-
+    const fechaActual = new Date()
+    const dia = fechaActual.getDate()
+    const mes = fechaActual.getMonth() + 1
+    const año = fechaActual.getFullYear()
+    const hora = fechaActual.getHours()
+    const minutos = fechaActual.getMinutes()
     const createOrder = async (userData) => {
         try {
             setLoading(true)
             const objOrder = {
                 buyer: userData,
                 items: cart,
-                total
+                total,
+                date: `${dia}/${mes}/${año} ${hora}:${minutos}`
             }
-    
-            const ids = cart.map(prod => prod.id)
-    
-            const productsRef = query(collection(db, 'products'), where(documentId(), 'in', ids))
-    
-            const { docs } = await getDocs(productsRef)
             
+            const ids = cart.map(prod => prod.id)
+            const productsRef = query(collection(db, 'products'), where(documentId(), 'in', ids))
+            const { docs } = await getDocs(productsRef)
             const batch = writeBatch(db)
             const outOfStock = []
     
             docs.forEach(doc => {
                 const dataDoc = doc.data()
                 const stockDb = dataDoc.stock
-    
                 const productAddedToCart = cart.find(prod => prod.id === doc.id)
                 const prodQuantity = productAddedToCart?.quantity
     
@@ -53,7 +53,6 @@ const Checkout = ({ greeting }) => {
                 batch.commit()
     
                 const ordersRef = collection(db, 'orders')
-    
                 const orderAdded = await addDoc(ordersRef, objOrder)
                 
                 clearCart()
@@ -84,7 +83,9 @@ const Checkout = ({ greeting }) => {
     if(orderId) {
         return (
             <div>
-                <h1>El id de su compra es: {orderId}</h1>
+                <h1>Compra Realizada {`${dia}/${mes}/${año} ${hora}:${minutos}`}</h1>
+                <h1>El id es: {orderId}</h1>
+                <h2>Gracias por comprar en MECATRON</h2>
             </div>
         )
     }

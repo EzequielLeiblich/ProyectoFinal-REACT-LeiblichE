@@ -34,10 +34,10 @@ const ContactForm = ({ onConfirm }) => {
             <label htmlFor="phone">Teléfono:</label>
             <input id="phone" placeholder="Ingrese su telefono.." required value={phone} onChange={(e) => setPhone(e.target.value)}/>
             <label htmlFor="email">Email:</label>
-            <input id="email" placeholder="Ingrese su E-mail.." required value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input id="email" placeholder="Ingrese su E-mail.." required value={email} onChange={handleEmailChange}/>
             <label htmlFor="confirm-email">Confirmar Email:</label>
-            <input id="confirm-email" placeholder="Confirme su E-mail.." required value={confirmEmail} onChange={(e) => setConfirmEmail(e.target.value)}/>
-            <button>Generar orden</button>
+            <input id="confirm-email" placeholder="Confirme su E-mail.." required value={confirmEmail} onChange={handleConfirmEmailChange}/>
+            <button type="submit">Generar orden</button>
         </form>
     )
 }

@@ -15,7 +15,7 @@ const Cart = ({ greeting }) => {
                             <div key={prod.id} className='prodEnCarrito'>
                                 <h2>{prod.name} |</h2>
                                 <h2>| Precio: ${prod.price} |</h2>
-                                <h2>| Cantidad: {prod.quantity} |</h2>
+                                <h2>| Cantidad: {prod.quantity}/{prod.stock} |</h2>
                                 <button className="restar" onClick={() => decrementQuantity(prod.id)}>- 1</button>
                                 <button className="sumar" onClick={() => incrementQuantity(prod.id, prod.stock)}>+ 1</button>
                             </div>

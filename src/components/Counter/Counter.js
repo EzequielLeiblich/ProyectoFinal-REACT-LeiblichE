@@ -1,4 +1,4 @@
-import './counter.css'
+import './Counter.css'
 import {useState} from 'react'
 
 const Counter = () => {
