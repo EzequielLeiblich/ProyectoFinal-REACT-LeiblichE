@@ -2,77 +2,58 @@
 
 Soy Ezequiel Gaston Leiblich y éste es mi proyecto final que realice con el fin de implementar los conocimientos aprendidos durante las clases de REACT de la comisión 39610 en CODERHOUSE.
 
-Mi intención fue crear una página web con la cual pueda brindar ayuda a un negocio familiar dedicado a la venta de repuestos de automóviles online (eCommerce).
+Mi intención fue crear una página web con la cual pueda brindar ayuda a un negocio familiar dedicado a la venta de repuestos de automóviles online (eCommerce). Ya estaba creado el proyecto en Clases de Javascript de CODERHOUSE y ahora lo implemento en ésta app mediante REACT que utiliza a Firebase como plataforma de desarrollo en la nube.
 
-# Estas son las instrucciones para crear y usar este proyecto en su PC
+Esta app web almacena sus datos en la nube, desde la cual podemos acceder para conocer las ordenes de compra generadas y a quien corresponde con sus datos personales.
 
-# Primeros pasos con la aplicación Create React
+![image](https://user-images.githubusercontent.com/113488651/233807740-bae55eac-7d11-4f2b-862b-cae62bb7018e.png)
 
-Este proyecto se inició con [Create React App](https://github.com/facebook/create-react-app).
+Por ejemplo:
 
-## Guiones disponibles
+![image](https://user-images.githubusercontent.com/113488651/233807770-595a6f7b-f9d8-42eb-a92b-225bc0e48153.png)
 
-En el directorio del proyecto, puede ejecutar:
+En nuestro portal se tiene acceso a un listado de repuestos para automoviles con un breve detalle y precio al cual se puede acceder para obtener una descripcion mas detallada, desde donde se puede seleccionar la cantidad necesaria para agregar al carro de compras, donde tambien se aclara la cantidad maxima de stock disponible.
+En el caso de querer buscar algun producto mas especifico en el margen izquierdo tenemos un listado de categorias de los productos mostrados para agilizar la busqueda.
 
-### `npm start`
+![image](https://user-images.githubusercontent.com/113488651/233807592-1c43719c-ab25-45e4-b728-86a0f471b709.png)
 
-Ejecuta la aplicación en el modo de desarrollo.\
-Abra [http://localhost:3000](http://localhost:3000) para verlo en su navegador.
+Al agregar productos al carrito podemos corroborar que en la esquina superior derecha aparece nuestro carro de compras en conjunto con el numero (en rojo) correspondiente a la cantidad de productos agregados a nuesto carro de compras.
 
-La página se volverá a cargar cuando realice cambios.\
-También puede ver pequeños errores en la consola.
+![image](https://user-images.githubusercontent.com/113488651/233807606-1f467048-5e6c-42b2-8583-38c8101469f4.png)
 
-### `npm test`
+Queriendo finalizar la compra de productos tenemos el acceso al carrito tanto en la imagen de la esquina superior derecha como un borton de finalizar compra debajo de los detalles del producto.
 
-Inicia el corredor de prueba en el modo de reloj interactivo.\
-Consulte la sección sobre [ejecutar pruebas](https://facebook.github.io/create-react-app/docs/running-tests) para obtener más información.
+![image](https://user-images.githubusercontent.com/113488651/233807639-1821f905-5217-4e13-824d-5588e8fe3879.png)
 
-### `npm run build`
+Ya dentro de nuesto carro de compras existe un detalle de cantidades de cada producto con la posibilidad de aunmentar o reducir esa cantidad con el detalle del total de la compra. En caso de arrepentimiento de compra tambien tenemos la posibilidad de vaciar nuesto carro para volver los contadores a 0, asi como tambien existe el boton del paso siguiente que corresponde al acceso al Checkout.
+Dentro de nuestro Checkout el usuario debera completar sus datos personales con sus respectivas validaciones para que dentro de nuestra base de datos se pueda corroborar cada oden de compra realizada.
 
-Construye la aplicación para producción en la carpeta `build`.\
-Empaqueta correctamente React en modo de producción y optimiza la compilación para obtener el mejor rendimiento.
+![image](https://user-images.githubusercontent.com/113488651/233807579-8bd66472-7943-476a-a84d-886ff369015b.png)
 
-La compilación se minimiza y los nombres de archivo incluyen las fracciones.\
-¡Tu aplicación está lista para ser implementada!
+Completado los datos personales para finalizar la compra y accediendo al boton de Generar Orden, podemos obserbar un aviso de la compra realizada con fecha y hora, seguido por el codigo de identificacion de la orden de compras.
 
-Consulte la sección sobre [implementación](https://facebook.github.io/create-react-app/docs/deployment) para obtener más información.
+![image](https://user-images.githubusercontent.com/113488651/233807893-6c83749a-9d25-455d-a059-ef40c56cac29.png)
 
-### `npm run eject`
 
-*Nota: esta es una operación unidireccional. ¡Una vez que te `expulsas`, no puedes volver atrás!**
+# Como instalar este proyecto
 
-Si no está satisfecho con la herramienta de compilación y las opciones de configuración, puede "expulsar" en cualquier momento. Este comando eliminará la dependencia de compilación única de su proyecto.
+1- Clonamos el repositorio del proyecto en Github en su computadora
 
-En cambio, copiará todos los archivos de configuración y las dependencias transitivas (webpack, Babel, ESLint, etc.) directamente en su proyecto para que tenga control total sobre ellos. Todos los comandos, excepto "expulsar", seguirán funcionando, pero apuntarán a los scripts copiados para que pueda modificarlos. En este punto estás por tu cuenta.
+2- Dentro de la carpeta pricipal del proyecto, desde la terminal de nuestro editor de código ingresamos el comando "npm install" para instalar las dependencias necesarias
 
-No tienes que usar nunca `eject`. El conjunto de funciones seleccionadas es adecuado para implementaciones pequeñas y medianas, y no debe sentirse obligado a usar esta función. Sin embargo, entendemos que esta herramienta no sería útil si no pudiera personalizarla cuando esté listo para hacerlo.
+3- En el sitio web de Firebase se debe crear un proyecto nuevo y configurar 3 colecciones nuevas (products, categories y orders)
 
-## Aprende más
+4- Copiamos las credenciales del proyecto de Firebase y lo pegamos en el archivo firebaseConfig.js dentro de las carpetas src/services/firebase
 
-Puede obtener más información en la [documentación Crear aplicación React] (https://facebook.github.io/create-react-app/docs/getting-started).
+5- Creamos un archivo .env en la carpeta raiz del proyecto y definimos las siguientes variables de entorno:
 
-Para aprender React, consulte la [documentación de React] (https://reactjs.org/).
+```sh
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
+```
 
-### División de código
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code- terrible)
-
-### Análisis del tamaño del paquete
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/ docs/analizando-el-tamaño-del-paquete)
-
-### Creación de una aplicación web progresiva
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react- app/docs/hacer-una-aplicación-web-progresiva)
-
-### Configuración avanzada
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced- configuración)
-
-### Despliegue
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` no se minimiza
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/ create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6- Por ultimo en la terminal de nuestro editor de código ingresamos el comando "npm start" para inicial la app desde el servidor local en nuestro navegador.
